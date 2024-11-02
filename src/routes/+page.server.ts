@@ -1,19 +1,16 @@
 import { superValidate } from 'sveltekit-superforms';
-import { arktype } from 'sveltekit-superforms/adapters';
+import { zod } from 'sveltekit-superforms/adapters';
 import type { PageServerLoad } from './$types';
-import { type } from 'arktype';
 
-const schema = type({
-	login: 'string',
-	senha: 'string'
+import { z } from 'zod';
+
+const schema = z.object({
+	login: z.string(),
+	senha: z.string()
 });
-type tipagem = typeof schema.infer;
-const defaults = {
-	login: '',
-	senha: ''
-};
 
 export const load: PageServerLoad = async () => {
-	const form = await superValidate(arktype(schema, { defaults }));
+	const form = await superValidate(zod(schema));
+
 	return { form };
 };
