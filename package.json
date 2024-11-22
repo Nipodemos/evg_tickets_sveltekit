@@ -34,7 +34,10 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"surrealimport": " surreal import --conn http://127.0.0.1:8000 --ns test --db tickets --user root --pass root ./src/lib/database/database.surql ",
+		"surrealseed": "bun --bun ./src/lib/database/seed.ts",
+		"surrealstart": "surreal start surrealkv:C:\\surrealdbstorage --strict"
 	},
 	"type": "module"
 }
