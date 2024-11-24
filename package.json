@@ -39,8 +39,5 @@
 		"surrealseed": "bun --bun ./src/lib/database/seed.ts",
 		"surrealstart": "surreal start surrealkv:C:\\surrealdbstorage --strict"
 	},
-	"type": "module",
-	"dependencies": {
-		"formsnap": "^1.0.1"
-	}
+	"type": "module"
 }
